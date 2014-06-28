@@ -32,14 +32,13 @@ public class ToTextFile {
 					String fileDir=file.getAbsolutePath();
 //					System.out.println(fileDir);
 					//读取字符串第3次出现"/"符号的位置 
-//					int position = getCharacterPosition(fileDir, 3, "/");
+//					int position = getCharacterPosition(fileDir, 1, "/");
 					
 					BufferedWriter writer = null;
 					StringBuffer buffer = new StringBuffer();
 					//获取html文件解析后的StringBuffer
 					buffer = new ParseHtmlToText().ParserH(file.getAbsolutePath());
 					if(buffer.length()>0){
-//						输出html文件地址....
 //						System.out.println(file.getAbsolutePath().substring(position+1));
 						
 						writer = new BufferedWriter(new FileWriter(outputpath+fileName.substring(0, fileName.lastIndexOf("."))+i+".txt"));
@@ -55,7 +54,7 @@ public class ToTextFile {
 		}
 	}
 	
-	public  int getCharacterPosition(String string ,int i,String character)
+/*	public  int getCharacterPosition(String string ,int i,String character)
 	{  
 		slashMatcher = Pattern.compile("/").matcher(string);  
 		int mIdx = 0;  
@@ -68,7 +67,7 @@ public class ToTextFile {
 		}  
 		return slashMatcher.start();  
 	}
-	
+	*/
 	
 
 }
